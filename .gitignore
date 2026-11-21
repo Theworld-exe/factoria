@@ -1,0 +1,54 @@
+# Built application & Gradle outputs
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+bin/
+gen/
+out/
+release/
+**/build/
+.gradle/
+.kotlin/
+captures/
+.cxx/
+.externalNativeBuild/
+
+# Local configuration & secrets (NEVER commit)
+local.properties
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+google-services.json
+.env
+.env.*
+!.env.example
+
+# IDE / Editor metadata
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Profiling & logs
+*.hprof
+*.log
+hs_err_pid*
+
+# Python data pipeline artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+tools/data-pipeline/*.db
+tools/data-pipeline/*.db-wal
+tools/data-pipeline/*.db-shm
+tools/data-pipeline/manifest.json

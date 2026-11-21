@@ -1,0 +1,15 @@
+{
+  "appName": "Factoria",
+  "factorioVersion": "2.0.32",
+  "spaceAgeEnabled": true,
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T21:12:59.610957Z",
+  "counts": {
+    "items": 52,
+    "fluids": 13,
+    "recipes": 16,
+    "entities": 14,
+    "technologies": 4,
+    "searchEntries": 104
+  }
+}

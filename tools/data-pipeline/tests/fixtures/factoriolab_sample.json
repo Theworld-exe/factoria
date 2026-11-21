@@ -1,0 +1,159 @@
+{
+  "version": {
+    "base": "2.0.77"
+  },
+  "categories": [
+    { "id": "logistics", "name": "Logistics" },
+    { "id": "production", "name": "Production" },
+    { "id": "intermediate-products", "name": "Intermediate products" },
+    { "id": "fluids", "name": "Fluids" }
+  ],
+  "items": [
+    {
+      "id": "wood",
+      "name": "Wood",
+      "category": "logistics",
+      "stack": 100
+    },
+    {
+      "id": "wooden-chest",
+      "name": "Wooden chest",
+      "category": "logistics",
+      "stack": 50
+    },
+    {
+      "id": "iron-plate",
+      "name": "Iron plate",
+      "category": "intermediate-products",
+      "stack": 100
+    },
+    {
+      "id": "copper-cable",
+      "name": "Copper cable",
+      "category": "intermediate-products",
+      "stack": 200
+    },
+    {
+      "id": "electronic-circuit",
+      "name": "Electronic circuit",
+      "category": "intermediate-products",
+      "stack": 200
+    },
+    {
+      "id": "crude-oil",
+      "name": "Crude oil",
+      "category": "fluids"
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "category": "fluids"
+    },
+    {
+      "id": "petroleum-gas",
+      "name": "Petroleum gas",
+      "category": "fluids"
+    },
+    {
+      "id": "uranium-ore",
+      "name": "Uranium ore",
+      "category": "intermediate-products",
+      "stack": 50
+    },
+    {
+      "id": "uranium-235",
+      "name": "Uranium 235",
+      "category": "intermediate-products",
+      "stack": 100
+    },
+    {
+      "id": "uranium-238",
+      "name": "Uranium 238",
+      "category": "intermediate-products",
+      "stack": 100
+    },
+    {
+      "id": "assembling-machine-1",
+      "name": "Assembling machine 1",
+      "category": "production",
+      "stack": 50,
+      "machine": {
+        "speed": 0.5,
+        "type": "electric",
+        "usage": 75,
+        "pollution": 4,
+        "modules": 0
+      }
+    },
+    {
+      "id": "offshore-pump",
+      "name": "Offshore pump",
+      "category": "production",
+      "stack": 20,
+      "machine": {
+        "speed": 1.0,
+        "size": [1, 2]
+      }
+    },
+    {
+      "id": "centrifuge",
+      "name": "Centrifuge",
+      "category": "production",
+      "stack": 50,
+      "machine": {
+        "speed": 1.0,
+        "type": "electric",
+        "usage": 350,
+        "pollution": 4,
+        "modules": 2
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "id": "wooden-chest",
+      "name": "Wooden chest",
+      "category": "logistics",
+      "time": 0.5,
+      "producers": ["assembling-machine-1"],
+      "in": { "wood": 2 },
+      "out": { "wooden-chest": 1 }
+    },
+    {
+      "id": "electronic-circuit",
+      "name": "Electronic circuit",
+      "category": "intermediate-products",
+      "time": 0.5,
+      "producers": ["assembling-machine-1"],
+      "in": { "iron-plate": 1, "copper-cable": 3 },
+      "out": { "electronic-circuit": 1 }
+    },
+    {
+      "id": "uranium-processing",
+      "name": "Uranium processing",
+      "category": "intermediate-products",
+      "time": 12.0,
+      "producers": ["centrifuge"],
+      "in": { "uranium-ore": 10 },
+      "out": { "uranium-235": 0.007, "uranium-238": 0.993 }
+    },
+    {
+      "id": "kovarex-enrichment-process",
+      "name": "Kovarex enrichment process",
+      "category": "intermediate-products",
+      "time": 60.0,
+      "producers": ["centrifuge"],
+      "catalyst": { "uranium-235": 40, "uranium-238": 2 },
+      "in": { "uranium-235": 40, "uranium-238": 5 },
+      "out": { "uranium-235": 41, "uranium-238": 2 }
+    },
+    {
+      "id": "quick-craft-recipe",
+      "name": "Quick craft recipe",
+      "category": "logistics",
+      "producers": ["assembling-machine-1"],
+      "in": { "wood": 1 },
+      "out": { "wood": 1 }
+    }
+  ]
+}
